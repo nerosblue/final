@@ -94,6 +94,8 @@ def predict(data: dict):
         region = data["region"]
         date = pd.to_datetime(data["date"])
         budget = data.get("budget", None)
+        if budget is not None:
+            budget = float(budget)
     except:
         return {"error": "Invalid input format"}
 
